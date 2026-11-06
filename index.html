@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://is.gd https://v.gd; style-src 'self'; img-src 'self' data:; connect-src https://ipwho.is https://cleanuri.com https://is.gd https://v.gd https://api.1pt.co https://speed.cloudflare.com https://cdn.jsdelivr.net; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toolbox Gateway</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="side">
+    <div class="grp" data-g="status"><span class="dot"></span><span data-i18n="g_status"></span></div>
+    <ul data-gl="status"><li data-p="ip" data-i18n="n_ip"></li><li data-p="speed" data-i18n="n_speed"></li></ul>
+    <div class="grp" data-g="security"><span class="dot"></span><span data-i18n="g_security"></span></div>
+    <ul data-gl="security"><li data-p="enc" data-i18n="n_enc"></li><li data-p="dec" data-i18n="n_dec"></li><li data-p="hash" data-i18n="n_hash"></li><li data-p="pass" data-i18n="n_pass"></li></ul>
+    <div class="grp" data-g="app"><span class="dot"></span><span data-i18n="g_app"></span></div>
+    <ul data-gl="app"><li data-p="short" data-i18n="n_short"></li></ul>
+  </nav>
+  <main class="main">
+    <header class="top"><b>Toolbox Gateway</b><span class="lang"><button class="lk" data-l="en">English</button> | <button class="lk" data-l="ru">Русский</button></span></header>
+    <div class="crumb" id="crumb"></div>
+    <hr>
+
+    <section id="p-ip">
+      <h2 data-i18n="ip_h"></h2>
+      <table>
+        <tr><th>IP</th><td id="ip-ip">...</td></tr>
+        <tr><th data-i18n="country"></th><td id="ip-co">...</td></tr>
+        <tr><th data-i18n="city"></th><td id="ip-ci">...</td></tr>
+        <tr><th data-i18n="isp"></th><td id="ip-isp">...</td></tr>
+        <tr><th data-i18n="tz"></th><td id="ip-tz">...</td></tr>
+        <tr><th data-i18n="browser"></th><td id="ip-ua">...</td></tr>
+      </table>
+      <button id="ip-r" data-i18n="refresh"></button>
+      <p class="msg" id="ip-msg"></p>
+    </section>
+
+    <section id="p-speed" hidden>
+      <h2 data-i18n="sp_h"></h2>
+      <p class="hint" data-i18n="sp_hint"></p>
+      <table>
+        <tr><th>Ping</th><td id="sp-ping">-</td></tr>
+        <tr><th>Jitter</th><td id="sp-jit">-</td></tr>
+        <tr><th>Download</th><td id="sp-down">-</td></tr>
+        <tr><th>Upload</th><td id="sp-up">-</td></tr>
+        <tr><th data-i18n="status"></th><td id="sp-st" data-i18n="ready"></td></tr>
+      </table>
+      <button id="sp-go" data-i18n="start"></button>
+    </section>
+
+    <section id="p-enc" hidden>
+      <h2 data-i18n="enc_h"></h2>
+      <table>
+        <tr><th data-i18n="method"></th><td><select id="e-m"></select></td></tr>
+        <tr><th id="e-kl"></th><td><input id="e-k" type="password" autocomplete="off"></td></tr>
+        <tr><th data-i18n="text"></th><td><textarea id="e-in" rows="5" maxlength="20000"></textarea></td></tr>
+      </table>
+      <button id="e-go" data-i18n="do_enc"></button>
+      <table><tr><th data-i18n="result"></th><td><textarea id="e-out" rows="5" readonly></textarea></td></tr></table>
+      <button class="cp" data-c="e-out" data-i18n="copy"></button>
+      <p class="msg" id="e-msg"></p>
+    </section>
+
+    <section id="p-dec" hidden>
+      <h2 data-i18n="dec_h"></h2>
+      <table>
+        <tr><th data-i18n="method"></th><td><select id="d-m"></select></td></tr>
+        <tr><th id="d-kl"></th><td><input id="d-k" type="password" autocomplete="off"></td></tr>
+        <tr><th data-i18n="text"></th><td><textarea id="d-in" rows="5" maxlength="40000"></textarea></td></tr>
+      </table>
+      <button id="d-go" data-i18n="do_dec"></button>
+      <table><tr><th data-i18n="result"></th><td><textarea id="d-out" rows="5" readonly></textarea></td></tr></table>
+      <button class="cp" data-c="d-out" data-i18n="copy"></button>
+      <p class="msg" id="d-msg"></p>
+    </section>
+
+    <section id="p-hash" hidden>
+      <h2 data-i18n="hash_h"></h2>
+      <table>
+        <tr><th data-i18n="algo"></th><td><select id="h-a"><option>SHA-256</option><option>SHA-512</option><option>SHA-384</option><option>SHA-1</option></select></td></tr>
+        <tr><th data-i18n="text"></th><td><textarea id="h-in" rows="4" maxlength="20000"></textarea></td></tr>
+        <tr><th data-i18n="n_hash"></th><td><input id="h-out" readonly></td></tr>
+      </table>
+      <button id="h-go" data-i18n="calc"></button> <button class="cp" data-c="h-out" data-i18n="copy"></button>
+    </section>
+
+    <section id="p-pass" hidden>
+      <h2 data-i18n="pw_h"></h2>
+      <table>
+        <tr><th data-i18n="len"></th><td><input id="g-len" type="number" min="8" max="64" value="20"></td></tr>
+        <tr><th data-i18n="syms"></th><td><label><input id="g-sym" type="checkbox" checked> <span data-i18n="special"></span></label></td></tr>
+        <tr><th data-i18n="n_pass"></th><td><input id="g-out" readonly></td></tr>
+      </table>
+      <button id="g-go" data-i18n="gen"></button> <button class="cp" data-c="g-out" data-i18n="copy"></button>
+    </section>
+
+    <section id="p-short" hidden>
+      <h2 data-i18n="sh_h"></h2>
+      <p class="hint" id="sh-hint" data-i18n="sh_hint"></p>
+      <table>
+        <tr><th data-i18n="link"></th><td><input id="s-in" type="url" maxlength="2048" placeholder="https://"></td></tr>
+        <tr><th data-i18n="short"></th><td><input id="s-out" readonly></td></tr>
+      </table>
+      <button id="s-go" data-i18n="shorten"></button> <button class="cp" data-c="s-out" data-i18n="copy"></button>
+      <p class="msg" id="s-msg"></p>
+    </section>
+    <section id="p-go" hidden>
+      <h2 data-i18n="go_h"></h2>
+      <p class="hint" data-i18n="go_hint"></p>
+      <table><tr><th data-i18n="link"></th><td id="go-url"></td></tr></table>
+      <a id="go-a" class="btn" rel="noopener noreferrer" data-i18n="go_btn"></a>
+    </section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

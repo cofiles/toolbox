@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Toolbox Gateway">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfeaea"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fafafa"/><stop offset="1" stop-color="#d4d4d4"/></linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e6e6"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fafafa"/><stop offset="1" stop-color="#cdcdcd"/></linearGradient>
+    <filter id="sh" x="-10%" y="-10%" width="125%" height="135%"><feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.35"/></filter>
+  </defs>
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <!-- sidebar -->
+  <g filter="url(#sh)">
+    <rect x="40" y="36" width="230" height="228" rx="4" fill="url(#side)" stroke="#9a9a9a"/>
+  </g>
+  <g font-family="Tahoma, Arial, sans-serif" font-size="17" fill="#222">
+    <circle cx="62" cy="68" r="7" fill="#c00"><animate attributeName="opacity" values="1;0.35;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <text x="80" y="74" fill="#900">Security</text>
+    <rect x="46" y="86" width="218" height="28" fill="#f4f4f4" stroke="#b5b5b5"/>
+    <text x="66" y="106" font-size="14" font-weight="bold" fill="#900">Encrypt</text>
+    <text x="66" y="136" font-size="14">Decrypt</text>
+    <text x="66" y="162" font-size="14">Hash</text>
+    <circle cx="62" cy="196" r="7" fill="#555"/>
+    <text x="80" y="202">Status</text>
+    <circle cx="62" cy="234" r="7" fill="#555"/>
+    <text x="80" y="240">Application</text>
+  </g>
+  <!-- header box -->
+  <g filter="url(#sh)">
+    <rect x="296" y="36" width="864" height="86" rx="8" fill="url(#bar)" stroke="#9a9a9a"/>
+  </g>
+  <g font-family="Tahoma, Arial, sans-serif" fill="#222">
+    <text x="328" y="92" font-size="40">Toolbox Gateway</text>
+    <text x="1128" y="64" font-size="13" text-anchor="end" fill="#00c" text-decoration="underline">English | Русский</text>
+  </g>
+  <!-- content -->
+  <g font-family="Tahoma, Arial, sans-serif" fill="#222">
+    <text x="296" y="160" font-size="14">Security&gt;Encrypt</text>
+    <rect x="296" y="168" width="864" height="2" fill="#bbb"/>
+    <text x="296" y="204" font-size="24">Encrypt text, shorten links, check IP and speed</text>
+    <text x="296" y="234" font-size="17" fill="#444">AES-256-GCM in your browser. No server. No tracking. Free on GitHub Pages.</text>
+  </g>
+  <g font-family="Tahoma, Arial, sans-serif" font-size="13" fill="#000" filter="url(#sh)">
+    <rect x="296" y="248" width="96" height="26" fill="url(#btn)" stroke="#6a6a6a"/><text x="344" y="266" text-anchor="middle">Encrypt</text>
+    <rect x="404" y="248" width="96" height="26" fill="url(#btn)" stroke="#6a6a6a"/><text x="452" y="266" text-anchor="middle">Decrypt</text>
+    <rect x="512" y="248" width="96" height="26" fill="url(#btn)" stroke="#6a6a6a"/><text x="560" y="266" text-anchor="middle">Speed test</text>
+  </g>
+  <!-- LEDs -->
+  <g>
+    <circle cx="1060" cy="262" r="6" fill="#2c2"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="1084" cy="262" r="6" fill="#2c2"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="1108" cy="262" r="6" fill="#e93"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="1132" cy="262" r="6" fill="#2c2"/>
+  </g>
+</svg>
